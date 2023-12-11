@@ -1,0 +1,26 @@
+$backgroundColor: #fff;
+$backgroundSecondaryColor: #e1e6e9;
+$shadowColor: #bac2c9;
+$primaryColor: #036dee;
+$secondaryColor: #008798;
+$fontColor: #394249;
+$fontDisabledColor: #8397a5;
+
+.dark-mode {
+    $backgroundColor: #34383d;
+    $backgroundSecondaryColor: #24272c;
+    $shadowColor: #0b0d10;
+    $primaryColor: #0b9dff;
+    $secondaryColor: #03c8cb;
+    $fontColor: #c1ccd5;
+    $fontDisabledColor: #617482;
+}
+.light-mode {
+    $backgroundColor: #fff;
+    $backgroundSecondaryColor: #e1e6e9;
+    $shadowColor: #bac2c9;
+    $primaryColor: #036dee;
+    $secondaryColor: #008798;
+    $fontColor: #394249;
+    $fontDisabledColor: #8397a5;
+}

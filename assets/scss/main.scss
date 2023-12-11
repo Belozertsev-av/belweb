@@ -1,0 +1,49 @@
+@import "./nullstyle.scss";
+@import "./mixins.scss";
+@import "./colors";
+
+body {
+    background-color: $backgroundColor;
+    font-family: "Exo 2", sans-serif;
+    color: $fontColor;
+    font-size: 16px;
+}
+#__nuxt {
+    height: 100vh;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    display: flex;
+    background-color: $backgroundSecondaryColor;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+}
+.container {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.dark-mode {
+    $backgroundColor: #34383d;
+    $backgroundSecondaryColor: #24272c;
+    $shadowColor: #0b0d10;
+    $primaryColor: #0b9dff;
+    $secondaryColor: #03c8cb;
+    $fontColor: #c1ccd5;
+    $fontDisabledColor: #617482;
+}
+.light-mode {
+    $backgroundColor: #fff;
+    $backgroundSecondaryColor: #e1e6e9;
+    $shadowColor: #bac2c9;
+    $primaryColor: #036dee;
+    $secondaryColor: #008798;
+    $fontColor: #394249;
+    $fontDisabledColor: #8397a5;
+}
