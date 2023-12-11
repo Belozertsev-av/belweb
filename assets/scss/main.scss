@@ -2,11 +2,125 @@
 @import "./mixins.scss";
 @import "./colors";
 
+// Стили тем
+html.light-mode {
+    body {
+        background-color: $backgroundColor;
+        color: $fontColor;
+    }
+    .header {
+        box-shadow: 0 0 8px $shadowColor;
+    }
+    .main {
+        background-color: $backgroundSecondaryColor;
+    }
+    .footer {
+        box-shadow: 0 0 8px $shadowColor;
+    }
+    .toggle {
+        &__body {
+            background-color: $backgroundSecondaryColor;
+            box-shadow: 0 0 4px $shadowColor;
+            &:hover {
+                .toggle__circle {
+                    box-shadow: 0 0 4px $shadowColor;
+                }
+            }
+        }
+        &__circle {
+            background-color: #f9db33;
+            &::before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                border-radius: 50%;
+                z-index: -1;
+                background-color: rgba($color: #ffe75c, $alpha: 1);
+                filter: blur(4px);
+            }
+        }
+    }
+    .menu {
+        &__item {
+            &:active {
+                background-color: rgba($color: $shadowColor, $alpha: 0.2);
+            }
+        }
+    }
+    .loader {
+        &__progress {
+            background-color: $primaryColor;
+        }
+    }
+}
+html.dark-mode {
+    body {
+        background-color: $backgroundColorDark;
+        color: $fontColorDark;
+    }
+    .header {
+        box-shadow: 0 0 8px $shadowColorDark;
+    }
+    .main {
+        background-color: $backgroundSecondaryColorDark;
+    }
+    .footer {
+        box-shadow: 0 0 8px $shadowColorDark;
+    }
+    .toggle {
+        &__body {
+            background-color: $backgroundSecondaryColorDark;
+            box-shadow: 0 0 4px $shadowColorDark;
+            &:hover {
+                .toggle__circle {
+                    box-shadow: 0 0 4px $shadowColorDark;
+                }
+            }
+        }
+        &__circle {
+            background-color: #f7f7f7;
+            &::before {
+                content: "";
+                @include adaptive-value("width", 10, 8, 0);
+                @include adaptive-value("height", 10, 8, 0);
+                border-radius: 50%;
+                @include adaptive-value("top", 5, 4, 0);
+                @include adaptive-value("left", 5, 4, 0);
+                position: absolute;
+                background-color: #cec0c0;
+            }
+            &::after {
+                content: "";
+                @include adaptive-value("width", 6, 4, 0);
+                @include adaptive-value("height", 6, 4, 0);
+                border-radius: 50%;
+                @include adaptive-value("top", 15, 12, 0);
+                @include adaptive-value("left", 15, 12, 0);
+                position: absolute;
+                background-color: #cec0c0;
+            }
+        }
+    }
+    .menu {
+        &__item {
+            &:active {
+                background-color: rgba($color: $shadowColorDark, $alpha: 0.2);
+            }
+        }
+    }
+    .loader {
+        &__progress {
+            background-color: $primaryColorDark;
+        }
+    }
+}
+
+// Базовые классы
 body {
-    background-color: $backgroundColor;
+    transition: 0.3s;
     font-family: "Exo 2", sans-serif;
-    color: $fontColor;
-    font-size: 16px;
+    @include adaptive-value("font-size", 16, 12, 0);
 }
 #__nuxt {
     height: 100vh;
@@ -17,33 +131,136 @@ body {
     display: flex;
     flex-direction: column;
 }
+.container {
+    max-width: 1170px;
+    @include adaptive-value("padding-left", 15, 5, 0);
+    @include adaptive-value("padding-right", 15, 5, 0);
+    margin: 0 auto;
+}
+.active {
+    @include adaptive-value("left", 17.5, 12.5, 0);
+}
+
+// Классы верстки
+.header {
+    z-index: 2;
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-around;
+        @include adaptive-value("padding", 20, 5, 0);
+    }
+    &__logo {
+        img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+    }
+}
+.toggle {
+    &__body {
+        @include adaptive-value("margin-right", 25, 10, 0);
+        height: 12px;
+        @include adaptive-value("width", 40, 35, 0);
+        border-radius: 10px;
+        position: relative;
+        cursor: pointer;
+        transition: left 0.3;
+    }
+    &__circle {
+        position: absolute;
+        transition: left 0.3s;
+        z-index: 3;
+        @include adaptive-value("top", -6.5, -4.5, 0);
+        @include adaptive-value("left", -2.5, 0, 0);
+        @include adaptive-value("width", 25, 20, 0);
+        @include adaptive-value("height", 25, 20, 0);
+        border-radius: 50%;
+    }
+}
+.menu {
+    &__item {
+        @include adaptive-value("font-size", 20, 14, 0);
+        @include adaptive-value("padding-left", 15, 10, 0);
+        @include adaptive-value("padding-right", 15, 10, 0);
+        padding-top: 15px;
+        padding-bottom: 15px;
+        cursor: pointer;
+        text-decoration: none;
+        user-select: none;
+        transition: 0.3s;
+        border-radius: 10px;
+        &:hover {
+            opacity: 0.5;
+        }
+        &:active {
+            transition: 0.1s;
+            transform: scale(0.97);
+            opacity: 1;
+        }
+    }
+}
 .main {
+    transition: 0.3s;
     display: flex;
-    background-color: $backgroundSecondaryColor;
     flex-direction: column;
     flex: 1 1 auto;
     width: 100%;
 }
-.container {
-    max-width: 1170px;
-    padding: 0 15px;
-    margin: 0 auto;
+.first {
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+            color: $primaryColor;
+            @include adaptive-value("font-size", 26, 18, 0);
+            @include adaptive-value("padding-top", 50, 20, 0);
+            @include adaptive-value("padding-bottom", 10, 5, 0);
+        }
+        h2 {
+            color: $secondaryColor;
+            @include adaptive-value("font-size", 22, 16, 0);
+        }
+        p {
+            text-align: center;
+            @include adaptive-value("padding", 20, 10, 0);
+        }
+    }
 }
-.dark-mode {
-    $backgroundColor: #34383d;
-    $backgroundSecondaryColor: #24272c;
-    $shadowColor: #0b0d10;
-    $primaryColor: #0b9dff;
-    $secondaryColor: #03c8cb;
-    $fontColor: #c1ccd5;
-    $fontDisabledColor: #617482;
+.footer {
+    &__body {
+        margin: 0 auto;
+        width: 100%;
+        @include adaptive-value("padding", 30, 15, 0);
+        text-align: center;
+    }
 }
-.light-mode {
-    $backgroundColor: #fff;
-    $backgroundSecondaryColor: #e1e6e9;
-    $shadowColor: #bac2c9;
-    $primaryColor: #036dee;
-    $secondaryColor: #008798;
-    $fontColor: #394249;
-    $fontDisabledColor: #8397a5;
+
+// Лоадер
+.loader {
+    z-index: 3;
+    height: 4px;
+    width: 100%;
+    &__progress {
+        // animation: progress 2s infinite ease-in;
+        width: 0;
+        height: 100%;
+    }
+}
+@keyframes progress {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
 }

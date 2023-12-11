@@ -15,23 +15,5 @@
 </script>
 
 <style lang="scss" scoped>
-.first {
-    &__body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        h1 {
-            color: $primaryColor;
-            font-size: 32px;
-            padding: 50px 0 10px 0;
-        }
-        h2 {
-            color: $secondaryColor;
-            font-size: 24px;
-        }
-        p {
-            padding: 20px;
-        }
-    }
-}
+
 </style>
