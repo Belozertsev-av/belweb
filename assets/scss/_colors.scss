@@ -1,15 +1,45 @@
-$backgroundColor: #fff;
-$backgroundSecondaryColor: #eff3f6;
-$shadowColor: #bac2c9;
-$primaryColor: #036dee;
-$secondaryColor: #008798;
-$fontColor: #394249;
-$fontDisabledColor: #8397a5;
+$fontSizeStart: 18;
+$fontSizeEnd: 14;
+$titleSizeStart: 34;
+$titleSizeEnd: 26;
+$subtitleSizeStart: 26;
+$subtitleSizeEnd: 20;
 
-$backgroundColorDark: #34383d;
-$backgroundSecondaryColorDark: #2a2d31;
-$shadowColorDark: #0b0d10;
-$primaryColorDark: #0b9dff;
-$secondaryColorDark: #03c8cb;
-$fontColorDark: #c1ccd5;
-$fontDisabledColorDark: #617482;
+$backgroundColor: #f5f5f9;
+$backgroundSecondaryColor: #eeeef3;
+$shadowColor: #babac9;
+$primaryColor: #1466f3;
+$secondaryColor: #119494;
+$fontColor: #41434a;
+$fontDisabledColor: #8385a5;
+
+$backgroundColorDark: #34353d;
+$backgroundSecondaryColorDark: #59596c;
+$shadowColorDark: #0b0b10;
+$primaryColorDark: #2f7cff;
+$secondaryColorDark: #03d4e7;
+$fontColorDark: #e5e5e8;
+$fontDisabledColorDark: #7b7b83;
+
+$maxWidth: 1440;
+$maxWidthContainer: 1170;
+
+@mixin adaptive-value($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+    @if $type==1 {
+        //только если меньше контейнера
+        #{$property}: $startSize + px;
+        @media (max-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+        }
+    } @else if $type==2 {
+        //только если больше контейнера
+        #{$property}: $startSize + px;
+        @media (min-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+        }
+    } @else {
+        // всегда
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+}

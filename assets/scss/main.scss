@@ -1,72 +1,24 @@
 @import "./nullstyle.scss";
-@import "./mixins.scss";
-@import "./colors";
+@import "./_colors";
 
-// Стили тем
-html.light-mode {
-    body {
-        background-color: $backgroundColor;
-        color: $fontColor;
-    }
-    .header {
-        box-shadow: 0 0 8px $shadowColor;
-    }
-    .main {
-        background-color: $backgroundSecondaryColor;
-    }
-    .footer {
-        box-shadow: 0 0 8px $shadowColor;
-    }
-    .toggle {
-        &__body {
-            background-color: $backgroundSecondaryColor;
-            box-shadow: 0 0 4px $shadowColor;
-            &:hover {
-                .toggle__circle {
-                    box-shadow: 0 0 4px $shadowColor;
-                }
-            }
-        }
-        &__circle {
-            background-color: #f9db33;
-            &::before {
-                content: "";
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                border-radius: 50%;
-                z-index: -1;
-                background-color: rgba($color: #ffe75c, $alpha: 1);
-                filter: blur(4px);
-            }
-        }
-    }
-    .menu {
-        &__item {
-            &:active {
-                background-color: rgba($color: $shadowColor, $alpha: 0.2);
-            }
-        }
-    }
-    .loader {
-        &__progress {
-            background-color: $primaryColor;
-        }
-    }
-}
+// Стили темной темы
 html.dark-mode {
     body {
         background-color: $backgroundColorDark;
         color: $fontColorDark;
     }
-    .header {
-        box-shadow: 0 0 8px $shadowColorDark;
-    }
-    .main {
-        background-color: $backgroundSecondaryColorDark;
+    .btn {
+        border: 3px solid $fontColorDark;
+        color: $fontColorDark;
+        svg {
+            fill: $fontColorDark;
+        }
+        &:active {
+            background-color: rgba($color: $shadowColorDark, $alpha: 0.2);
+        }
     }
     .footer {
-        box-shadow: 0 0 8px $shadowColorDark;
+        box-shadow: 0 0 4px $shadowColorDark;
     }
     .toggle {
         &__body {
@@ -89,6 +41,7 @@ html.dark-mode {
                 @include adaptive-value("left", 5, 4, 0);
                 position: absolute;
                 background-color: #cec0c0;
+                filter: blur(0);
             }
             &::after {
                 content: "";
@@ -104,6 +57,7 @@ html.dark-mode {
     }
     .menu {
         &__item {
+            color: $fontColorDark;
             &:active {
                 background-color: rgba($color: $shadowColorDark, $alpha: 0.2);
             }
@@ -118,9 +72,40 @@ html.dark-mode {
 
 // Базовые классы
 body {
+    background-color: $backgroundColor;
+    color: $fontColor;
     transition: 0.3s;
     font-family: "Exo 2", sans-serif;
-    @include adaptive-value("font-size", 16, 12, 0);
+    @include adaptive-value("font-size", $fontSizeStart, $fontSizeEnd, 0);
+}
+.btn {
+    padding: 5px 15px;
+    transition: 0.3s;
+    user-select: none;
+    text-decoration: none;
+    color: $fontColor;
+    cursor: pointer;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    border: 3px solid $fontColor;
+    border-radius: 15px;
+    svg {
+        margin-right: 7px;
+        fill: $fontColor;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+    }
+    &:hover {
+        opacity: 0.5;
+    }
+    &:active {
+        background-color: rgba($color: $shadowColor, $alpha: 0.2);
+        transition: 0.1s;
+        transform: scale(0.97);
+        opacity: 1;
+    }
 }
 #__nuxt {
     height: 100vh;
@@ -137,77 +122,9 @@ body {
     @include adaptive-value("padding-right", 15, 5, 0);
     margin: 0 auto;
 }
-.active {
-    @include adaptive-value("left", 17.5, 12.5, 0);
-}
 
 // Классы верстки
-.header {
-    z-index: 2;
-    &__body {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 auto;
-        width: 100%;
-    }
 
-    &__menu {
-        display: flex;
-        justify-content: space-around;
-        @include adaptive-value("padding", 20, 5, 0);
-    }
-    &__logo {
-        img {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-        }
-    }
-}
-.toggle {
-    &__body {
-        @include adaptive-value("margin-right", 25, 10, 0);
-        height: 12px;
-        @include adaptive-value("width", 40, 35, 0);
-        border-radius: 10px;
-        position: relative;
-        cursor: pointer;
-        transition: left 0.3;
-    }
-    &__circle {
-        position: absolute;
-        transition: left 0.3s;
-        z-index: 3;
-        @include adaptive-value("top", -6.5, -4.5, 0);
-        @include adaptive-value("left", -2.5, 0, 0);
-        @include adaptive-value("width", 25, 20, 0);
-        @include adaptive-value("height", 25, 20, 0);
-        border-radius: 50%;
-    }
-}
-.menu {
-    &__item {
-        @include adaptive-value("font-size", 20, 14, 0);
-        @include adaptive-value("padding-left", 15, 10, 0);
-        @include adaptive-value("padding-right", 15, 10, 0);
-        padding-top: 15px;
-        padding-bottom: 15px;
-        cursor: pointer;
-        text-decoration: none;
-        user-select: none;
-        transition: 0.3s;
-        border-radius: 10px;
-        &:hover {
-            opacity: 0.5;
-        }
-        &:active {
-            transition: 0.1s;
-            transform: scale(0.97);
-            opacity: 1;
-        }
-    }
-}
 .main {
     transition: 0.3s;
     display: flex;
@@ -215,28 +132,8 @@ body {
     flex: 1 1 auto;
     width: 100%;
 }
-.first {
-    &__body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        h1 {
-            color: $primaryColor;
-            @include adaptive-value("font-size", 26, 18, 0);
-            @include adaptive-value("padding-top", 50, 20, 0);
-            @include adaptive-value("padding-bottom", 10, 5, 0);
-        }
-        h2 {
-            color: $secondaryColor;
-            @include adaptive-value("font-size", 22, 16, 0);
-        }
-        p {
-            text-align: center;
-            @include adaptive-value("padding", 20, 10, 0);
-        }
-    }
-}
 .footer {
+    box-shadow: 0 0 4px $shadowColor;
     &__body {
         margin: 0 auto;
         width: 100%;
@@ -251,6 +148,7 @@ body {
     height: 4px;
     width: 100%;
     &__progress {
+        background-color: $primaryColor;
         // animation: progress 2s infinite ease-in;
         width: 0;
         height: 100%;
