@@ -2,13 +2,16 @@
     <header class="header">
         <div class="container">
             <div class="header__body">
-                <div class="header__burger" :class="{ clicked: isClicked }" v-on:click="toggleMenu">
-                <div class="header__burger-line"></div></div>
+                <div class="header__burger" 
+                    :class="{ clicked: isClicked }" 
+                    v-on:click="isClicked = !isClicked">
+                    <div class="header__burger-line"></div>
+                </div>
                 <ul class="header__menu">
-                    <NuxtLink to="/"><li class="menu__item">Главная</li></NuxtLink>
-                    <NuxtLink to="/portfolio"><li class="menu__item">Портфолио</li></NuxtLink>
-                    <NuxtLink to="/about"><li class="menu__item">Обо мне</li></NuxtLink>
-                    <NuxtLink to="/contacts"><li class="menu__item">Контакты</li></NuxtLink>
+                    <NuxtLink v-on:click="toggleMenu" to="/"><li class="menu__item">Главная</li></NuxtLink>
+                    <NuxtLink v-on:click="toggleMenu" to="/portfolio"><li class="menu__item">Портфолио</li></NuxtLink>
+                    <NuxtLink v-on:click="toggleMenu" to="/about"><li class="menu__item">Обо мне</li></NuxtLink>
+                    <NuxtLink v-on:click="toggleMenu" to="/contacts"><li class="menu__item">Контакты</li></NuxtLink>
                 </ul>
                 <div class="header__toggle" v-on:click="toggleTheme">
                     <div class="toggle__body">
@@ -22,12 +25,15 @@
 
 <script setup lang="ts">
 const colorMode = useColorMode()
+const isActive = ref(false)
+const isClicked = ref(false)
 const isMobile = ref(false)
-let isActive = (colorMode.preference == 'light') ? ref(false) : ref(true)
-let isClicked = ref(false)
 
-const checkScreen = () => (window.innerWidth <= 600) ? isMobile.value = true : isMobile.value = false
-const toggleMenu = () => isClicked.value = !isClicked.value
+const toggleMenu = () => {
+    if (isMobile.value && isClicked.value) {
+        isClicked.value = !isClicked.value
+    }
+} 
 const toggleTheme = () => {
     if (colorMode.preference == 'light') {
         colorMode.preference = 'dark'
@@ -37,18 +43,19 @@ const toggleTheme = () => {
     isActive.value = !isActive.value
     
 }
-
 onMounted(() => {
-    checkScreen()
+    isMobile.value = window.innerWidth < 600 ? true : false
+    if (colorMode.preference === 'light') isActive.value = false
+    else isActive.value = true
 })
-
-
-
-
 </script>
 
 <style lang="scss" scoped>
 html.dark-mode{
+    .header{
+        background-color: $backgroundColorDark;
+        box-shadow: 0 0 4px $shadowColorDark;
+    }
     .header__burger-line{
         background-color: $fontColorDark;
         &:after, &:before {
@@ -63,7 +70,11 @@ html.dark-mode{
     }
 }
 .header{
-    display: fixed;
+    position: fixed;
+    @include adaptive-value('height', 90, 50, 0);
+    background-color: $backgroundColor;
+    box-shadow: 0 0 4px $shadowColor;
+    width: 100%;
     z-index: 2;
     &__body {
         display: flex;

@@ -58,6 +58,7 @@ html.dark-mode{
 }
 
 .first{
+    @include adaptive-value('padding-top', 90, 50, 0);
     overflow: hidden;
     &__body{
         width: 100%;
