@@ -1,10 +1,5 @@
 <template>
     <FirstComponent></FirstComponent>
-    <FirstComponent></FirstComponent>
-    <FirstComponent></FirstComponent>
-    <FirstComponent></FirstComponent>
-    <FirstComponent></FirstComponent>
-    <SecondComponent></SecondComponent>
 </template>
 
 <script setup lang="ts">

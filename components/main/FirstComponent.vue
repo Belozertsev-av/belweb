@@ -43,17 +43,20 @@
 html.dark-mode{
     .first{
         &__title{
-            color: $primaryColorDark;
+            color: $fontColorDark;
         }
         &__subtitle{
             color: $secondaryColorDark;
+        }
+        &__column{
+            box-shadow: 0px 0px 4px $shadowColorDark;
         }
     }
     .left{
         background-color: $secondaryColorDark;
     }
     .right{
-        background-color: $backgroundSecondaryColorDark;
+        background-color: $backgroundColorDark;
     }
 }
 
@@ -67,11 +70,10 @@ html.dark-mode{
         flex-direction: row;
         justify-content: center;
         text-align: center;
-
     }
     &__img{
         img{
-            @include adaptive-value('width', 500, 300, 0);
+            @include adaptive-value('width', 450, 200, 0);
             object-fit: contain;
         }
     }
@@ -81,21 +83,22 @@ html.dark-mode{
         justify-content: center;
         text-align: right;
         @include adaptive-value('padding', 15, 5, 0);
+        box-shadow: 0px 0px 4px $shadowColor;
 
     }
     &__title{
         @include adaptive-value('font-size', $titleSizeStart, $titleSizeEnd, 0);
-        color: $primaryColor;
+        color: $fontColor;
         font-weight: bold;
-        margin-bottom: 10px;
+        @include adaptive-value('margin-bottom', 10, 5, 0);
     }
     &__subtitle{
         @include adaptive-value('font-size', $subtitleSizeStart, $subtitleSizeEnd, 0);
         color: $secondaryColor;
-        margin-bottom: 30px;
+        @include adaptive-value('margin-bottom', 30, 15, 0);
     }
     &__text{
-        margin-bottom: 15px;
+        @include adaptive-value('margin-bottom', 15, 10, 0);
     }
     &__button{
         margin: 10px 0;
@@ -115,7 +118,7 @@ html.dark-mode{
     padding-right: 50px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: $backgroundSecondaryColor;
+    background-color: $backgroundColor;
 }
 
 @media screen and (max-width: 830px) {
@@ -143,7 +146,7 @@ html.dark-mode{
         .right{
             border-bottom-left-radius: 15px;
             border-top-right-radius: 0;
-            padding: 20px 30px 20px 30px;
+            padding: 15px 20px 10px 20px;
         }
     }
 }
