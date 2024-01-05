@@ -73,7 +73,7 @@ html.dark-mode{
     }
     &__img{
         img{
-            @include adaptive-value('width', 450, 200, 0);
+            @include adaptive-value('width', 450, 250, 0);
             object-fit: contain;
         }
     }
