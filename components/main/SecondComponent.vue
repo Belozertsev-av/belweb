@@ -87,7 +87,7 @@
         }
     }
     .second{
-        height: 100svh;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
