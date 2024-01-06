@@ -55,11 +55,11 @@ html.dark-mode{
 }
 
 .first{
-    height: 85vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @include adaptive-value('margin-top', 90, 50, 0);
+    @include adaptive-value('margin-top', 50, 30, 0);
     &__body{
         height: 100%;
         width: 100%;
