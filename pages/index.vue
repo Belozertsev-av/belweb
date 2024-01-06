@@ -1,5 +1,6 @@
 <template>
     <FirstComponent></FirstComponent>
+    <SecondComponent></SecondComponent>
 </template>
 
 <script setup lang="ts">

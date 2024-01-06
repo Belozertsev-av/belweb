@@ -142,6 +142,12 @@ html.dark-mode .menu__item:active {
 html.dark-mode .loader__progress {
   background-color: #2f7cff;
 }
+html.dark-mode .title {
+  color: #e5e5e8;
+}
+html.dark-mode .subtitle {
+  color: #7ed0ff;
+}
 
 body {
   background-color: #eeeef3;
@@ -200,6 +206,17 @@ body {
   padding-left: calc(5px + 10 * (100vw - 320px) / 1120);
   padding-right: calc(5px + 10 * (100vw - 320px) / 1120);
   margin: 0 auto;
+}
+
+.title {
+  font-size: calc(26px + 8 * (100vw - 320px) / 1120);
+  color: #41434a;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: calc(20px + 6 * (100vw - 320px) / 1120);
+  color: #1874aa;
 }
 
 .main {

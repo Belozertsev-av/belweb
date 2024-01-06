@@ -68,6 +68,12 @@ html.dark-mode {
             background-color: $primaryColorDark;
         }
     }
+    .title {
+        color: $fontColorDark;
+    }
+    .subtitle {
+        color: $secondaryColorDark;
+    }
 }
 
 // Базовые классы
@@ -122,7 +128,15 @@ body {
     @include adaptive-value("padding-right", 15, 5, 0);
     margin: 0 auto;
 }
-
+.title {
+    @include adaptive-value("font-size", $titleSizeStart, $titleSizeEnd, 0);
+    color: $fontColor;
+    font-weight: bold;
+}
+.subtitle {
+    @include adaptive-value("font-size", $subtitleSizeStart, $subtitleSizeEnd, 0);
+    color: $secondaryColor;
+}
 // Классы верстки
 
 .main {

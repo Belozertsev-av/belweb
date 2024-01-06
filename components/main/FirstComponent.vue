@@ -8,8 +8,8 @@
             </div>
             <div class="first__column right">
                 <div class="first__row">
-                    <div class="first__title">Я тот, кого вы искали!</div>
-                    <div class="first__subtitle">Разрабатываю сайты под ключ</div>
+                    <div class="first__title title">Я тот, кого вы искали!</div>
+                    <div class="first__subtitle subtitle">Меня зовут Андрей и я разрабатываю сайты под ключ</div>
                     <div class="first__text">Занимаюсь проектами любого типа и сложности от простого лендинга, до нагруженных CRM-систем</div>
                 </div>
                 <div class="first__row">
@@ -42,18 +42,12 @@
 <style lang="scss" scoped>
 html.dark-mode{
     .first{
-        &__title{
-            color: $fontColorDark;
-        }
-        &__subtitle{
-            color: $secondaryColorDark;
-        }
         &__column{
             box-shadow: 0px 0px 4px $shadowColorDark;
         }
     }
     .left{
-        background-color: $secondaryColorDark;
+        background-color: $primaryColorDark;
     }
     .right{
         background-color: $backgroundColorDark;
@@ -70,6 +64,7 @@ html.dark-mode{
         flex-direction: row;
         justify-content: center;
         text-align: center;
+        height: 80vh;
     }
     &__img{
         img{
@@ -87,14 +82,9 @@ html.dark-mode{
 
     }
     &__title{
-        @include adaptive-value('font-size', $titleSizeStart, $titleSizeEnd, 0);
-        color: $fontColor;
-        font-weight: bold;
         @include adaptive-value('margin-bottom', 10, 5, 0);
     }
     &__subtitle{
-        @include adaptive-value('font-size', $subtitleSizeStart, $subtitleSizeEnd, 0);
-        color: $secondaryColor;
         @include adaptive-value('margin-bottom', 30, 15, 0);
     }
     &__text{
@@ -110,7 +100,7 @@ html.dark-mode{
     }
 }
 .left{
-    background-color: $secondaryColor;
+    background-color: $primaryColor;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 }
@@ -133,6 +123,7 @@ html.dark-mode{
         }
         &__body{
             flex-direction: column;
+            height: auto;
         }
         &__row{
             align-items: center;
