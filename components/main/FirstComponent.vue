@@ -55,7 +55,7 @@ html.dark-mode{
 }
 
 .first{
-    height: 100vh;
+    height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
