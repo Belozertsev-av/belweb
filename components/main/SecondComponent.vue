@@ -1,79 +1,111 @@
 <template>
     <section class="second">
-        <div class="second__body">
-            <div class="second__text-body">
-                <div class="second__title title">Какие технологии я использую?</div>
-                <div class="second__subtitle subtitle">Работу над созданием сайта можно разделить на 4 части</div>
-                <div class="second__text">
-                    <ul>
-                        <li>Разработка дизайна</li>
-                        <li>Проектирование баз данных</li>
-                        <li>Написание серверной части приложения</li>
-                        <li>Написание клиентской части приложения</li>
-                    </ul>
-                     <p>Для каждого этапа используется спецефический набор технологий и инструментов. Вот мой стек и он постоянно пополняется!</p>
-                </div>
-            </div>            
-            <div class="second__block-body">
-                    <div class="second__steck-list">
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/html5-plain.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/css3-plain.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/javascript-original.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/vuejs-original.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/vuetify-original.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/typescript-original.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/kotlin-original.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/spring-original.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/java-original.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/mysql-plain.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/postgresql-plain.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/sqlite-original.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/figma-original.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/illustrator-plain.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/photoshop-plain.png" alt="">
-                        </div>
-                        <div class="second__steck-item">
-                            <img src="~/assets/img/logos/git-plain.png" alt="">
-                        </div>
+            <div class="second__body">
+                <div class="second__text-body">
+                    <div class="second__title title">Какие технологии я использую?</div>
+                    <div class="second__subtitle subtitle">Работу над созданием сайта можно разделить на 4 части</div>
+                    <div class="second__text">
+                        <ul>
+                            <li>Разработка дизайна</li>
+                            <li>Проектирование баз данных</li>
+                            <li>Написание серверной части приложения</li>
+                            <li>Написание клиентской части приложения</li>
+                        </ul>
+                         <p>Для каждого этапа используется спецефический набор технологий и инструментов. Вот мой стек и он постоянно пополняется!</p>
+                    </div>
+                </div>            
+                <div class="second__block-body">
+                        <div class="second__steck-list" ref="logoBlock">
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/html5-plain.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/css3-plain.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/javascript-original.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/vuejs-original.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/vuetify-original.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/typescript-original.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/kotlin-original.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/spring-original.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/java-original.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/mysql-plain.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/postgresql-plain.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/sqlite-original.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/figma-original.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/illustrator-plain.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/photoshop-plain.png" alt="">
+                            </div>
+                            <div class="second__steck-item">
+                                <img src="~/assets/img/logos/git-plain.png" alt="">
+                            </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 </template>
 
 <script setup lang="ts">
-    const findScreenPosition = computed(() => {
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+const logoBlock = ref()
 
-    return author.books.length > 0 ? 'Yes' : 'No'
+gsap.registerPlugin(ScrollTrigger);
+onMounted(() => {
+    gsap.from('.second__text-body', {
+        scrollTrigger: {
+            trigger: '.second__text-body',
+            start: 'top 70%',
+            scrub: 1.5,
+            end: 'center center',
+            toggleActions: 'restart pause resume reverse'
+        },
+        delay: 0.2,
+        x: -200,
+        duration: 0.5,
+        autoAlpha: 0,
+        ease: 'back.out(1.7)'
+    })
+    gsap.from(logoBlock.value.children, {
+        scrollTrigger: {
+            trigger: logoBlock.value,
+            start: 'top 70%',
+            end: 'center center',
+            scrub: 1.5,
+            toggleActions: 'restart pause resume reverse'
+        },
+        stagger: 0.25,
+        delay: 0.2,
+        x: +200,
+        duration: 3,
+        autoAlpha: 0,
+        ease: 'back.out(1.7)'
+    })
 })
 </script>
 

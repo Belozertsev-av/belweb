@@ -17,6 +17,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "gsap": "^3.12.4",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2"
   }

@@ -1,14 +1,7 @@
 <template>
     <div class="wrapper">
         <BwHeader></BwHeader>
-        <main class="main">
-                <div class="loader">
-                    <div class="loader__progress"></div>
-                </div>
-                <div class="container">
-                    <slot></slot>
-                </div>
-            </main>
+            <slot></slot>
         <BwFooter></BwFooter>
     </div>
 </template>
