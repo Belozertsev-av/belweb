@@ -71,7 +71,10 @@
 </template>
 
 <script setup lang="ts">
+    const findScreenPosition = computed(() => {
 
+    return author.books.length > 0 ? 'Yes' : 'No'
+})
 </script>
 
 <style lang="scss" scoped>
@@ -84,8 +87,10 @@
         }
     }
     .second{
-            @include adaptive-value('margin-top', 50, 30, 0);
-            @include adaptive-value('margin-bottom', 50, 30, 0);
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         &__body{
             margin: 0 auto;
             text-align: center;

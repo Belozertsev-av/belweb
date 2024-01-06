@@ -55,9 +55,13 @@ html.dark-mode{
 }
 
 .first{
-    @include adaptive-value('padding-top', 90, 50, 0);
-    overflow: hidden;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include adaptive-value('margin-top', 90, 50, 0);
     &__body{
+        height: 100%;
         width: 100%;
         display: flex;
         @include adaptive-value('padding', 15, 5, 0);
