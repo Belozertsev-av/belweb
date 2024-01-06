@@ -1,13 +1,6 @@
 <template>
-    <main class="main">
-        <div class="loader">
-            <div class="loader__progress"></div>
-        </div>
-        <div class="container">
-            <FirstComponent class="first"></FirstComponent>
-            <SecondComponent class="second"></SecondComponent>
-        </div>
-    </main>
+    <FirstComponent class="first"></FirstComponent>
+    <SecondComponent class="second"></SecondComponent>
 </template>
 
 <script setup lang="ts">

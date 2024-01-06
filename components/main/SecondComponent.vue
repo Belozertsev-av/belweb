@@ -83,10 +83,10 @@ onMounted(() => {
             start: 'top 70%',
             scrub: 1.5,
             end: 'center center',
-            toggleActions: 'restart pause resume reverse'
+            toggleActions: 'restart none none reverse'
         },
         delay: 0.2,
-        x: -200,
+        x: -100,
         duration: 0.5,
         autoAlpha: 0,
         ease: 'back.out(1.7)'
@@ -97,11 +97,11 @@ onMounted(() => {
             start: 'top 70%',
             end: 'center center',
             scrub: 1.5,
-            toggleActions: 'restart pause resume reverse'
+            toggleActions: 'restart none none reverse'
         },
         stagger: 0.25,
         delay: 0.2,
-        x: +200,
+        x: +100,
         duration: 3,
         autoAlpha: 0,
         ease: 'back.out(1.7)'
@@ -165,6 +165,7 @@ onMounted(() => {
         &__steck-list{
             width: 100%;
             display: grid;
+            overflow: hidden;
             @include adaptive-value('gap', 10, 5, 0);
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-template-rows: 1fr 1fr 1fr 1fr;

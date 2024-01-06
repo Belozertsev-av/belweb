@@ -241,4 +241,17 @@ html.dark-mode{
         }
     }
 }
+.router-link-active {
+    opacity: 0.5;
+
+    + .menu__item:active {
+        background-color: none;
+        transition: none;
+        transform: none;
+        opacity: none;
+    }
+    + .menu__item:hover {
+        opacity:none;
+    }
+}
 </style>

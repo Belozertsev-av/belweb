@@ -83,6 +83,8 @@ body {
     transition: 0.3s;
     font-family: "Exo 2", sans-serif;
     @include adaptive-value("font-size", $fontSizeStart, $fontSizeEnd, 0);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .btn {
     padding: 5px 15px;
@@ -145,24 +147,4 @@ body {
     flex-direction: column;
     flex: 1 1 auto;
     width: 100%;
-}
-// Лоадер
-.loader {
-    z-index: 3;
-    height: 4px;
-    width: 100%;
-    &__progress {
-        background-color: $primaryColor;
-        // animation: progress 2s infinite ease-in;
-        width: 0;
-        height: 100%;
-    }
-}
-@keyframes progress {
-    0% {
-        width: 0%;
-    }
-    100% {
-        width: 100%;
-    }
 }

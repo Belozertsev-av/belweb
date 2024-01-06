@@ -1,7 +1,11 @@
 <template>
     <div class="wrapper">
         <BwHeader></BwHeader>
-            <slot></slot>
+        <main class="main">
+            <div class="container">
+                    <slot></slot>
+               </div>
+        </main>
         <BwFooter></BwFooter>
     </div>
 </template>
