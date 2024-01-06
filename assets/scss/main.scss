@@ -4,7 +4,7 @@
 // Стили темной темы
 html.dark-mode {
     body {
-        background-color: $backgroundColorDark;
+        background-color: $backgroundSecondaryColorDark;
         color: $fontColorDark;
     }
     .btn {
@@ -72,7 +72,7 @@ html.dark-mode {
 
 // Базовые классы
 body {
-    background-color: $backgroundColor;
+    background-color: $backgroundSecondaryColor;
     color: $fontColor;
     transition: 0.3s;
     font-family: "Exo 2", sans-serif;
@@ -132,16 +132,6 @@ body {
     flex: 1 1 auto;
     width: 100%;
 }
-.footer {
-    box-shadow: 0 0 4px $shadowColor;
-    &__body {
-        margin: 0 auto;
-        width: 100%;
-        @include adaptive-value("padding", 30, 15, 0);
-        text-align: center;
-    }
-}
-
 // Лоадер
 .loader {
     z-index: 3;

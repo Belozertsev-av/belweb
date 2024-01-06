@@ -34,7 +34,7 @@
         </div>
     </section>
 </template>
-
+ смм
 <script setup lang="ts">
 
 </script>
