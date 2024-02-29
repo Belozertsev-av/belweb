@@ -10,19 +10,20 @@
                 <div class="first__row">
                     <div class="first__title title">Я тот, кого вы искали!</div>
                     <div class="first__subtitle subtitle">Меня зовут Андрей и я разрабатываю сайты под ключ</div>
-                    <div class="first__text">Занимаюсь проектами любого типа и сложности от простого лендинга, до нагруженных CRM-систем</div>
+                    <div class="first__text">Занимаюсь проектами любого типа и сложности от простого лендинга, до
+                        нагруженных CRM-систем</div>
                 </div>
                 <div class="first__row">
                     <NuxtLink to="/portfolio" class="first__button btn">
-                        <svg >
+                        <svg>
                             <use href="~/assets/img/portfolio.svg#portfolio"></use>
-                         </svg>
+                        </svg>
                         <div class="text">
                             Портфолио
                         </div>
                     </NuxtLink>
                     <a href="https://github.com/Belozertsev-av" target="_blank" class="first__button btn">
-                        <svg >
+                        <svg>
                             <use href="~/assets/img/github.svg#github"></use>
                         </svg>
                         <div class="text">
@@ -40,23 +41,27 @@
 </script>
 
 <style lang="scss" scoped>
-html.dark-mode{
-    .first{
-        &__column{
+html.dark-mode {
+    .first {
+        &__column {
             box-shadow: 0px 0px 4px $shadowColorDark;
         }
     }
-    .left{
+
+    .left {
         background-color: $primaryColorDark;
     }
-    .right{
+
+    .right {
         background-color: $backgroundColorDark;
     }
 }
 
-.first{
+.first {
     @include adaptive-value('margin-top', 90, 50, 0);
-    &__body{
+    overflow: hidden;
+
+    &__body {
         height: 100%;
         width: 100%;
         display: flex;
@@ -66,13 +71,15 @@ html.dark-mode{
         text-align: center;
         height: 85vh;
     }
-    &__img{
-        img{
+
+    &__img {
+        img {
             @include adaptive-value('width', 450, 250, 0);
             object-fit: contain;
         }
     }
-    &__column{
+
+    &__column {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -81,30 +88,37 @@ html.dark-mode{
         box-shadow: 0px 0px 4px $shadowColor;
 
     }
-    &__title{
+
+    &__title {
         @include adaptive-value('margin-bottom', 10, 5, 0);
     }
-    &__subtitle{
+
+    &__subtitle {
         @include adaptive-value('margin-bottom', 30, 15, 0);
     }
-    &__text{
+
+    &__text {
         @include adaptive-value('margin-bottom', 15, 10, 0);
     }
-    &__button{
+
+    &__button {
         margin: 10px 0;
     }
-    &__row{
+
+    &__row {
         display: flex;
         flex-direction: column;
         align-items: end;
     }
 }
-.left{
+
+.left {
     background-color: $primaryColor;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 }
-.right{
+
+.right {
     padding-right: 50px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -112,34 +126,38 @@ html.dark-mode{
 }
 
 @media screen and (max-width: 830px) {
-    .first{
-        &__img{
+    .first {
+        &__img {
             margin: 0 auto;
             padding: 0;
             margin: 0;
         }
-        &__column{
+
+        &__column {
             text-align: center;
         }
-        &__body{
+
+        &__body {
             flex-direction: column;
             height: auto;
         }
-        &__row{
+
+        &__row {
             align-items: center;
             text-align: center;
             margin: 0 auto;
         }
-        .left{
+
+        .left {
             border-top-right-radius: 15px;
             border-bottom-left-radius: 0;
         }
-        .right{
+
+        .right {
             border-bottom-left-radius: 15px;
             border-top-right-radius: 0;
             padding: 15px 20px 10px 20px;
         }
     }
 }
-
 </style>

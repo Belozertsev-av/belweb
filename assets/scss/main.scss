@@ -139,8 +139,6 @@ body {
     @include adaptive-value("font-size", $subtitleSizeStart, $subtitleSizeEnd, 0);
     color: $secondaryColor;
 }
-// Классы верстки
-
 .main {
     transition: 0.3s;
     display: flex;
