@@ -2,16 +2,22 @@
     <header class="header">
         <div class="container">
             <div class="header__body">
-                <div class="header__burger" 
-                    :class="{ clicked: isClicked }" 
-                    v-on:click="isClicked = !isClicked">
+                <div class="header__burger" :class="{ clicked: isClicked }" v-on:click="isClicked = !isClicked">
                     <div class="header__burger-line"></div>
                 </div>
                 <ul class="header__menu">
-                    <NuxtLink v-on:click="toggleMenu" to="/"><li class="menu__item">Главная</li></NuxtLink>
-                    <NuxtLink v-on:click="toggleMenu" to="/portfolio"><li class="menu__item">Портфолио</li></NuxtLink>
-                    <NuxtLink v-on:click="toggleMenu" to="/about"><li class="menu__item">Обо мне</li></NuxtLink>
-                    <NuxtLink v-on:click="toggleMenu" to="/contacts"><li class="menu__item">Контакты</li></NuxtLink>
+                    <NuxtLink v-on:click="toggleMenu" to="/">
+                        <li class="menu__item">Главная</li>
+                    </NuxtLink>
+                    <NuxtLink v-on:click="toggleMenu" to="/portfolio">
+                        <li class="menu__item">Портфолио</li>
+                    </NuxtLink>
+                    <NuxtLink v-on:click="toggleMenu" to="/about">
+                        <li class="menu__item">Обо мне</li>
+                    </NuxtLink>
+                    <NuxtLink v-on:click="toggleMenu" to="/contacts">
+                        <li class="menu__item">Контакты</li>
+                    </NuxtLink>
                 </ul>
                 <div class="header__toggle" v-on:click="toggleTheme">
                     <div class="toggle__body">
@@ -33,7 +39,7 @@ const toggleMenu = () => {
     if (isMobile.value && isClicked.value) {
         isClicked.value = !isClicked.value
     }
-} 
+}
 const toggleTheme = () => {
     if (colorMode.preference == 'light') {
         colorMode.preference = 'dark'
@@ -41,7 +47,7 @@ const toggleTheme = () => {
         colorMode.preference = 'light'
     }
     isActive.value = !isActive.value
-    
+
 }
 onMounted(() => {
     isMobile.value = window.innerWidth < 600 ? true : false
@@ -51,31 +57,37 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-html.dark-mode{
-    .header{
+html.dark-mode {
+    .header {
         background-color: $backgroundColorDark;
         box-shadow: 0 0 4px $shadowColorDark;
     }
-    .header__burger-line{
+
+    .header__burger-line {
         background-color: $fontColorDark;
-        &:after, &:before {
+
+        &:after,
+        &:before {
             background-color: $fontColorDark;
         }
     }
-    .clicked{
-        + .header__menu{
-            
+
+    .clicked {
+        +.header__menu {
+
             background-color: $backgroundColorDark;
         }
     }
 }
-.header{
+
+.header {
     position: fixed;
     @include adaptive-value('height', 90, 50, 0);
     background-color: $backgroundColor;
     box-shadow: 0 0 4px $shadowColor;
     width: 100%;
     z-index: 2;
+
     &__body {
         display: flex;
         justify-content: space-between;
@@ -91,7 +103,8 @@ html.dark-mode{
         position: relative;
         @include adaptive-value("padding", 20, 5, 0);
     }
-    &__burger{
+
+    &__burger {
         @include adaptive-value("margin-left", 15, 10, 0);
         @include adaptive-value("margin-right", 15, 10, 0);
         margin-top: 10px;
@@ -102,6 +115,7 @@ html.dark-mode{
         cursor: pointer;
         position: relative;
     }
+
     &__burger-line {
         transition: 0.3s;
         position: absolute;
@@ -111,7 +125,8 @@ html.dark-mode{
         top: calc(50% - 2px);
         left: 0;
         background-color: $fontColor;
-        &:before{
+
+        &:before {
             content: "";
             transition: 0.3s;
             position: absolute;
@@ -121,7 +136,8 @@ html.dark-mode{
             top: -10.5px;
             background-color: $fontColor;
         }
-        &:after{
+
+        &:after {
             content: "";
             transition: 0.3s;
             position: absolute;
@@ -132,8 +148,9 @@ html.dark-mode{
             background-color: $fontColor;
         }
     }
-    
+
 }
+
 .toggle {
     &__body {
         background-color: $backgroundSecondaryColor;
@@ -145,12 +162,14 @@ html.dark-mode{
         position: relative;
         cursor: pointer;
         transition: left 0.3;
+
         &:hover {
             .toggle__circle {
                 box-shadow: 0 0 4px $shadowColor;
             }
         }
     }
+
     &__circle {
         position: absolute;
         transition: left 0.3s;
@@ -161,6 +180,7 @@ html.dark-mode{
         @include adaptive-value("height", 25, 20, 0);
         border-radius: 50%;
         background-color: #f9db33;
+
         &::before {
             content: "";
             width: 100%;
@@ -187,9 +207,11 @@ html.dark-mode{
         user-select: none;
         transition: 0.3s;
         border-radius: 15px;
+
         &:hover {
             opacity: 0.5;
         }
+
         &:active {
             background-color: rgba($color: $shadowColor, $alpha: 0.2);
             transition: 0.1s;
@@ -198,38 +220,44 @@ html.dark-mode{
         }
     }
 }
-.clicked{
-    .header{
-        &__burger-line{
+
+.clicked {
+    .header {
+        &__burger-line {
             transform: rotate(-45deg);
-            &:before{
+
+            &:before {
                 transform: rotate(90deg);
                 top: calc(-50% + 2px);
             }
-            &:after{
+
+            &:after {
                 display: none;
             }
         }
     }
-    +.header__menu{
-            visibility: visible;
-            z-index: -1;
-            background-color: $backgroundColor;
-            width: 100%;
-            top: 0;
-            left: 0;
+
+    +.header__menu {
+        visibility: visible;
+        z-index: -1;
+        background-color: $backgroundColor;
+        width: 100%;
+        top: 0;
+        left: 0;
     }
 }
+
 .active {
     @include adaptive-value("left", 17.5, 12.5, 0);
 }
 
 @media screen and (max-width: 600px) {
-    .header{
-        &__burger{
+    .header {
+        &__burger {
             display: flex;
         }
-        &__menu{
+
+        &__menu {
             visibility: hidden;
             display: flex;
             flex-direction: column;
@@ -241,17 +269,18 @@ html.dark-mode{
         }
     }
 }
+
 .router-link-active {
     opacity: 0.5;
 
-    + .menu__item:active {
+    +.menu__item:active {
         background-color: none;
         transition: none;
         transform: none;
         opacity: none;
     }
-    + .menu__item:hover {
-        opacity:none;
+
+    +.menu__item:hover {
+        opacity: none;
     }
-}
-</style>
+}</style>
