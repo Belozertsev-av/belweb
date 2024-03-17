@@ -9,8 +9,9 @@
             <div class="first__column right">
                 <div class="first__row">
                     <div class="first__title title">Я тот, кого вы искали!</div>
-                    <div class="first__subtitle subtitle">Меня зовут Андрей и я разрабатываю сайты под ключ</div>
-                    <div class="first__text">Занимаюсь проектами любого типа и сложности от простого лендинга, до
+                    <div class="first__subtitle subtitle">Меня зовут Андрей и я web-разработчик</div>
+                    <div class="first__text">Имею опыт работы над проектами самого разного типа и сложности от простого
+                        лендинга, до
                         нагруженных CRM-систем</div>
                 </div>
                 <div class="first__row">

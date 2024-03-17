@@ -2,7 +2,8 @@
   <section class="third">
     <div class="third__body">
       <div class="third__title title">Выглядит одинаково на всех устройствах</div>
-      <div class="third__subtitle subtitle">Наши приложения адаптируются под любой размер экрана!</div>
+      <div class="third__subtitle subtitle">Разработанные мной и моими коллегами приложения адаптируются под любой
+        размер экрана!</div>
       <div class="third__block">
         <div class="third__column" id="left-column">
           <div class="third__image">

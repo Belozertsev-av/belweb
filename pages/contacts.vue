@@ -1,9 +1,9 @@
 <template>
   <div class="contacts">
     <div class="contacts__block">
-      <div class="contacts__adress">Россия, Санкт-Петербург, пр-т. Медиков д.3 лит. А</div>
-      <div class="contacts__email">andrew.vl.belozertsev@gmail.com</div>
-      <div class="contacts__tel">+7 (951) 669-21-54</div>
+      <div class="contacts__adress">Юр. адресс: Россия, Санкт-Петербург, пр-т. Медиков д.3 лит. А</div>
+      <div class="contacts__email">Эл. почта: andrew.vl.belozertsev@gmail.com</div>
+      <div class="contacts__tel">Телефон: +7 (951) 669-21-54</div>
       <div class="contacts__social">
         <!-- <a href="" class="contacts__vk btn">
         <svg>
@@ -56,6 +56,10 @@ const detailedControls = {
   height: 100%;
   width: 100%;
   @include adaptive-value('padding-top', 15, 5, 0);
+
+  &__block {
+    @include adaptive-value('padding-top', 5, 15, 0);
+  }
 
   &__adress {
     @include adaptive-value('padding-bottom', 15, 10, 0);

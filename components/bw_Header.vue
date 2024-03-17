@@ -5,7 +5,7 @@
                 <div class="header__burger" :class="{ clicked: isClicked }" v-on:click="isClicked = !isClicked">
                     <div class="header__burger-line"></div>
                 </div>
-                <ul class="header__menu">
+                <ul class="header__menu" v-if="isClicked || !isMobile">
                     <NuxtLink v-on:click="toggleMenu" to="/">
                         <li class="menu__item">Главная</li>
                     </NuxtLink>
