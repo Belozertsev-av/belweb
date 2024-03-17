@@ -1,7 +1,7 @@
 <template>
   <div class="contacts">
     <div class="contacts__block">
-      <div class="contacts__adress">Юр. адресс: Россия, Санкт-Петербург, пр-т. Медиков д.3 лит. А</div>
+      <div class="contacts__adress">Юр. адрес: Россия, Санкт-Петербург, пр-т. Медиков д.3 лит. А</div>
       <div class="contacts__email">Эл. почта: andrew.vl.belozertsev@gmail.com</div>
       <div class="contacts__tel">Телефон: +7 (951) 669-21-54</div>
       <div class="contacts__social">

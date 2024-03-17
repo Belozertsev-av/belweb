@@ -99,7 +99,8 @@ onUnmounted(() => {
     @include adaptive-value('margin-bottom', 15, 10, 0);
 
     img {
-      height: 50vh;
+      height: 40vh;
+      max-width: 100%;
     }
   }
 
