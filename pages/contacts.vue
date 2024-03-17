@@ -76,7 +76,7 @@ const detailedControls = {
   }
 
   &__map {
-    @include adaptive-value('height', 420, 400, 0);
+    height: 98%;
     width: 100%;
   }
 
