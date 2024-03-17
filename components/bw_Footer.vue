@@ -13,20 +13,21 @@
 </script>
 
 <style lang="scss" scoped>
-html.dark-mode{
-    .footer{
+html.dark-mode {
+    .footer {
         background-color: $backgroundColorDark;
     }
 }
+
 .footer {
     box-shadow: 0 0 4px $shadowColor;
     background-color: $backgroundColor;
+
     &__body {
         margin: 0 auto;
         width: 100%;
-        @include adaptive-value("padding", 30, 15, 0);
+        @include adaptive-value("padding", 10, 5, 0);
         text-align: center;
     }
 }
-
 </style>

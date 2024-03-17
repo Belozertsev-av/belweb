@@ -6,7 +6,6 @@
                 <slot></slot>
             </div>
         </main>
-        <BwFooter></BwFooter>
     </div>
 </template>
 

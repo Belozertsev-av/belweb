@@ -35,7 +35,7 @@
         </div>
     </section>
 </template>
- смм
+смм
 <script setup lang="ts">
 
 </script>
@@ -58,7 +58,6 @@ html.dark-mode {
 }
 
 .first {
-    @include adaptive-value('margin-top', 90, 50, 0);
     overflow: hidden;
 
     &__body {

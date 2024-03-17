@@ -283,4 +283,5 @@ html.dark-mode {
     +.menu__item:hover {
         opacity: none;
     }
-}</style>
+}
+</style>

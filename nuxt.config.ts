@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/color-mode'],
+  plugins: [{ src: '~/plugins/map.ts', mode: 'client' }],
   colorMode: {
     // preference: 'system', // default value of $colorMode.preference
     // fallback: 'light', // fallback value if not system preference found
