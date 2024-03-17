@@ -1,7 +1,7 @@
 import { Octokit } from "@octokit/core"
 
 const octokit = new Octokit({
-  auth: "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"
+  auth: "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"
 })
 
 export default defineEventHandler(async (event) => {
